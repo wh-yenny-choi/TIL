@@ -1,6 +1,6 @@
 # PCA 수업 내용
 
-![image-20210617173027574](할거.assets/image-20210617173027574.png)
+![image-20210617173027574](PCA 수업 내용.assets/image-20210617173027574.png)
 
 Dimensionality Reduction(차원 축소)에는 FS(형상 선택), FE(형상 추출) 이 있으며 FE 방법에는 PCA가 있다.
 

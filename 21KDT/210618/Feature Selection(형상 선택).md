@@ -2,7 +2,7 @@
 
 ## 형상 선택 기법
 
-![image-20210618112959091](제목 없음.assets/image-20210618112959091.png)
+![image-20210618112959091](Feature Selection(형상 선택).assets/image-20210618112959091.png)
 
 위 그림에서 Dimensionality Reduction은 PCA라고 가정
 
@@ -157,7 +157,7 @@ profiling찍는 이유?
 
 ## 형상 선택 방법
 
-![image-20210617173140343](제목 없음.assets/image-20210617173140343.png)
+![image-20210617173140343](Feature Selection(형상 선택).assets/image-20210617173140343.png)
 
 
 
@@ -194,7 +194,7 @@ profiling찍는 이유?
 
 피어슨 상관계수에서 팁과 성별을 볼때 상관성 x
 
-![image-20210618131010873](제목 없음.assets/image-20210618131010873.png)
+![image-20210618131010873](Feature Selection(형상 선택).assets/image-20210618131010873.png)
 
 위 그림은 피어슨 상관계수 
 
