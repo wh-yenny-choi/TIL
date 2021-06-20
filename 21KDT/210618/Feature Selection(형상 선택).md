@@ -151,6 +151,17 @@ profiling찍는 이유?
 
 2. 큰 (많은) 다중공선성 제거하기 위해 
 
+6.
+
+pca와 상관계수 차이?
+
+**데이터의 분산관점**에서 차원 축소는 pca(FE), **상관관계 관점**에서 차원 축소(FS)는 다중공선성 제거 (피어슨 등...) 
+
+차원 축소의 관점이 다르다.
+
+- pca는 corrvariance(공분산), variance(분산) 이용
+- 상관계수는 모델을 계속 만들고, 결과를 비교한다. 예측력에 도움되는 feature와 parameter를 찾아 나가는 것
+
 
 
 
@@ -192,49 +203,49 @@ profiling찍는 이유?
 
 여러 feature들 간 데이터를 봤을때, 하나의 input parameter에서 분포의 크기를 무시할 수 없는 것을 선택
 
-피어슨 상관계수에서 팁과 성별을 볼때 상관성 x
+- 예를 들어,
+
+아래의 그림은 pearson's 상관계수
 
 ![image-20210618131010873](Feature Selection(형상 선택).assets/image-20210618131010873.png)
 
-위 그림은 피어슨 상관계수 
+피어슨 상관계수에서 팁과 성별을 볼 때, 
 
+- 상관성이 없다.
 
+목표변수가 totlabill일 때, **다중공선성 제거**시
 
-목표변수가 totlabill일때 다중공선성 제거 시  팁과 사이즈 중 하나는 제거 할 수 있음 
+- tip과 size 중 하나는 제거 할 수 있다. 
 
-데이하고 타임도 둘 중 하나는 제거
+- day, time(, sex) 에서도 제거할 수 있다.
 
-모델 만들때 (피팅할때) 둘 중하나는 평균을 내서 하나면 넣어서 차원을 축소
+- 모델 만들때 (피팅할때), 다중공선성을 가지는 둘 중 하나는 평균을 내서 하나만 선택하여 차원을 축소
 
-다중공선성을 제거하기 위함
+직관적으로 볼 때,  total_bill 등의 7개의 feature들과 tip _rate는 확연히 다르다.
 
-직관적으로 볼때 토탈빌이랑 여러개의 피쳐들은(7개 ) 중에서는 새로운 피쳐가 나왔는데 tip _rate는 확연히 다르다
+- 차원 축소시(다중공선성 제거시),tip_rate는 상위에서 살아 남을것
 
-ㅣ뮤턴 베리어블 = 파생 변수
+비슷한 상관계수들은 제거하고, 새로운 신선한 feature을 선택하는 것 
 
-tip_rate는 상위에서 살아 남을것
+- 차원 축소의 목적
 
-데이터의 분산관점에서 차원 축소는 pca
-
-상관관계 입장에서 차원 축소는 다중공선성 제거 (like 피어슨) 
-
-비슷 상관계수들은 버리고 새롭게 신선한 피처를 집어넣어야함 = 차원 축소의 목적
-
-차원축소 => 정보 손실도 발생함
+차원 축소 => 정보 손실도 발생
 
 모델에 넣고 결과값을 비교
 
-모델을 계속 만들고 예측력에 도움이 되는 피처와 파라미터를 찾아 나가는것 
+모델을 계속 만들고, 예측력에 도움이 되는 feature와 parameter를 찾아 나가는 것 
 
-모델링 - 파라미터
+mutate variable = 파생 변수 
 
-차원 축소의 관점이 다르당
-
-pca - 코베리언스 : 공분산 - 분산 값으로 
+modeling = parameter
 
 
 
 ##### Spearman's
+
+input variable : Numerical
+
+- output variable : Numerical
 
 
 
@@ -242,13 +253,23 @@ pca - 코베리언스 : 공분산 - 분산 값으로
 
 ##### ANOVA
 
+input variable : Numerical
+
+- output variable : Categorical
+
 
 
 ##### Kendall's
 
+input variable : Numerical
+
+- output variable : Categorical
 
 
 
++) 
 
+입력변수(input variable) = **독립변수(Independent variable)** = 특징(feature,기계학습에서) = Regressor(회귀자) = 조작변수(manipulated variable)
 
+출력변수(output variable) = **Dependent variable(종속변수)** = Target variable(목표변수) = Response variable(반응 변수)
 
