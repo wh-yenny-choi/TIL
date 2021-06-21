@@ -2,7 +2,7 @@
 
 ## 형상 선택 기법
 
-![image-20210618112959091](Feature Selection(형상 선택).assets/image-20210618112959091.png)
+![image-20210618112959091](Feature Selection(형상 선택).assets/image-20210618112959091-1624240797164.png)
 
 위 그림에서 Dimensionality Reduction은 PCA라고 가정
 
@@ -168,7 +168,7 @@ pca와 상관계수 차이?
 
 ## 형상 선택 방법
 
-![image-20210617173140343](Feature Selection(형상 선택).assets/image-20210617173140343.png)
+![image-20210617173140343](Feature Selection(형상 선택).assets/image-20210617173140343-1624240810658.png)
 
 
 
@@ -207,7 +207,7 @@ pca와 상관계수 차이?
 
 아래의 그림은 pearson's 상관계수
 
-![image-20210618131010873](Feature Selection(형상 선택).assets/image-20210618131010873.png)
+![image-20210618131010873](Feature Selection(형상 선택).assets/image-20210618131010873-1624240838025.png)
 
 피어슨 상관계수에서 팁과 성별을 볼 때, 
 
