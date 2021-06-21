@@ -2,7 +2,7 @@
 
 ## 형상 선택 기법
 
-![image-20210618112959091](Feature Selection(형상 선택).assets/image-20210618112959091-1624240797164.png)
+![image-20210621110306838](Feature Selection(형상 선택).assets/image-20210621110306838.png)
 
 위 그림에서 Dimensionality Reduction은 PCA라고 가정
 
@@ -59,14 +59,14 @@ input variable  **Numerical**
   - **Categorical( - ANOVA, Kendall's)**
     - 카테고리형 변수 - 중앙값 또는 최빈값 주기
 
-
+![image-20210621110336438](Feature Selection(형상 선택).assets/image-20210621110336438.png)
 
 **<u>RFE의</u>** 
 
 - input variable 은 **Numerical( - Pearson's)**
 -  output variable **Categorical( - Kendall's)**
 
-RFE에서 y값이 classifier(변수가 0 or 1)`categorical`임.  
+RFE에서 y값(tip)이 classifier(변수가 0 or 1)`categorical`임.  
 
 따라서 **kendall's**로 확인해야 하는데 <u>target variable(tip, y, output variance)이 Categorical이 아니라Numerical</u> `regression`
 
@@ -168,9 +168,7 @@ pca와 상관계수 차이?
 
 ## 형상 선택 방법
 
-![image-20210617173140343](Feature Selection(형상 선택).assets/image-20210617173140343-1624240810658.png)
-
-
+![image-20210621110239808](Feature Selection(형상 선택).assets/image-20210621110239808.png)
 
 ### **Input variable(입력 변수)**
 
