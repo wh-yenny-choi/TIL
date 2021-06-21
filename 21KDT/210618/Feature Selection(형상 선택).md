@@ -2,7 +2,7 @@
 
 ## 형상 선택 기법
 
-![image-20210621110306838](Feature Selection(형상 선택).assets/image-20210621110306838.png)
+![image-20210621112324086](Feature Selection(형상 선택).assets/image-20210621112324086.png)
 
 위 그림에서 Dimensionality Reduction은 PCA라고 가정
 
@@ -59,7 +59,7 @@ input variable  **Numerical**
   - **Categorical( - ANOVA, Kendall's)**
     - 카테고리형 변수 - 중앙값 또는 최빈값 주기
 
-![image-20210621110336438](Feature Selection(형상 선택).assets/image-20210621110336438.png)
+![image-20210621112304664](Feature Selection(형상 선택).assets/image-20210621112304664.png)
 
 **<u>RFE의</u>** 
 
@@ -168,7 +168,7 @@ pca와 상관계수 차이?
 
 ## 형상 선택 방법
 
-![image-20210621110239808](Feature Selection(형상 선택).assets/image-20210621110239808.png)
+![image-20210621112346030](Feature Selection(형상 선택).assets/image-20210621112346030.png)
 
 ### **Input variable(입력 변수)**
 
@@ -205,7 +205,7 @@ pca와 상관계수 차이?
 
 아래의 그림은 pearson's 상관계수
 
-![image-20210621110852779](Feature Selection(형상 선택).assets/image-20210621110852779.png)
+![image-20210621113257114](Feature Selection(형상 선택).assets/image-20210621113257114.png)
 
 피어슨 상관계수에서 팁과 성별을 볼 때, 
 
