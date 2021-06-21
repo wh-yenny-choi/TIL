@@ -205,7 +205,7 @@ pca와 상관계수 차이?
 
 아래의 그림은 pearson's 상관계수
 
-![image-20210618131010873](Feature Selection(형상 선택).assets/image-20210618131010873-1624240838025.png)
+![image-20210621110852779](Feature Selection(형상 선택).assets/image-20210621110852779.png)
 
 피어슨 상관계수에서 팁과 성별을 볼 때, 
 
