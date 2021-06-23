@@ -1,8 +1,30 @@
 # Writing your first Django app
 
-## part1
-
 간단한 설문조사(Polls)어플리케이션 만드는 과정
+
+## 프로젝트 뼈대 만들기
+
+코딩은 프로젝트 뼈대를 만드는 것 부터 시작한다. 즉, 프레적트에 필요한 디렉토리 및 파일을 구성하고, 설정 파일을 setting한다. 그 외에도 기본 테이블을 생성하고, 관리자 계정인 super user를 생성하는 것이 필요하다. 프로젝트가 만들어지면 그 하위에 애플리케이션 디렉토리 및 파일을 구성
+
+Django는 이런 작업을 위한 **Django Shell Command** 제공
+
+![img](https://camo.githubusercontent.com/1223e7fa2f825ca50c946547f6f1a5557070a0b0a65d71c7737d770e392aeab7/68747470733a2f2f626c6f6766696c65732e707374617469632e6e65742f4d6a41784f5441794d4468664d6a49672f4d4441784e5451354e6a45784d5449314d7a6b302e7961715f324e2d4d4c71512d516753746330555a64305f7838364b415a56426b6b3762466b687238533730672e2d754c6c61466d4177734b336b5630627142502d38355258315f654f6c4841515577384f6647314f5f5449672e4a5045472e6a6a7363616e2f312e4a5047)
+
+![img](https://camo.githubusercontent.com/19f6ea7de1b01487a768af570d046603bf583a34971d0cadb4b4be14c72352bc/68747470733a2f2f626c6f6766696c65732e707374617469632e6e65742f4d6a41784f5441794d4468664d5463342f4d4441784e5451354e6a45784e7a49354f544d322e736d6c2d426e4842356e2d7272656545586c49344a6350626d5a7431383642595236356131664c37416834672e616872705f3065706b563361763745357a356155335956355357686f6634586f304d73776544344a6b5341672e4a5045472e6a6a7363616e2f332e4a5047)
+
+이 외에도 프레젝트가 완성된 후에 template, static, logs 등의 디렉토리가 더 필요하다. 프로젝트 개발을 진행하면서 임의로 추가해도 무방하다.
+
+```django
+django-admin startproject mysite // mysite라는 프로젝트를 생성함
+python manage.py startapp polls // polls라는 애플리케이션을 생성함
+notepad settings.py // 설정 파일을 확인 및 수정함
+python manage.py migrate // 데이터베이스에 기본 테이블을 생성함
+python manage.py runserver // 현재까지 작업을 개발용 웹 서버로 확인함
+```
+
+https://github.com/jjscan/md-docs/blob/master/%5B%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0-4%5DDjango%20%EC%9B%B9%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC.md
+
+## part1
 
 #### 프로젝트 만들기 
 
