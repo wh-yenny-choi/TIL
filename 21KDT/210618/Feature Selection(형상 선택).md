@@ -4,7 +4,7 @@
 
 ![image-20210621112324086](Feature Selection(형상 선택).assets/image-20210621112324086.png)
 
-위 그림에서 Dimensionality Reduction은 PCA라고 가정
+위 그림에서 Dimensionality Reduction은 PCA(feature Extraction,형상추출 이므로)라고 가정
 
 - PCA는 목표변수가 없다 (= y값이 없다)
 - 2차원 이상의 데이터 분포에서 차원을 축소하면서 축을 찾는것
