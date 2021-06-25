@@ -14,3 +14,21 @@ attention만으로도 encoder-decoder 구조를 가진 모델
 
 ![img](https://media.vlpt.us/images/skm0626/post/81ac75d6-e51f-411e-9afe-0c0db87225e2/image.png)
 
+
+
+## 
+
+
+
+
+
+
+
+https://hipgyung.tistory.com/entry/ATTENTION-IS-ALL-YOU-NEED-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0
+
+https://velog.io/@skm0626/Attention-Is-All-You-NeedTransformer-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0
+
+https://dalpo0814.tistory.com/49
+
+https://pozalabs.github.io/transformer/
+
