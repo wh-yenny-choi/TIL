@@ -122,84 +122,84 @@ print(xgboost.__version__)
 # - CPU 코어가 많지 않은 개인용 PC에서는 수행시간 향상 효과 보기 어려움
 
 # ### 파이썬 래퍼 XGBoost 하이퍼파라미터
-# 
+#
 # ① 일반 파라미터 : 실행 시 스레드의 개수, silent 모드 등의 선택을 위한 파라미터로 거의 바꾸는 경우 없음
-# 
+#
 # ② 부스터 파라미터 : 트리 최적화, 부스팅, regularization 등과 관련된 파라미터
-# 
+#
 # ③ 학습 태스크 파라미터 : 학습 수행 시 객체 함수, 평가를 위한 지표 등을 설정하는 파라미터
-
+#
 # **① 일반 파라미터**
 # - booster : gbtree(tree based model) 또는 gblinear(linear model) 선택
 #     - 디폴트는 gbtree
 # - silent : 디폴트 0, 출력 메시지를 나타내고 싶지 않을 경우 1로 설정
 # - nthread : CPU 실행 스레드 개수 조정. 디폴트는 CPU 전체 스레드를 다 사용하는 것
 #     - 멀티 코어/스레드 CPU 시스템에서 전체 CPU를 사용하지 않고 일부 CPU만 사용해 ML 애플리케이션 구동하는 경우 변경
-#     
-#     
-# **② 부스터 파라미터** 
+#
+#
+# **② 부스터 파라미터**
 # : 트리 최적화, 부스팅, regularization 등과 관련된 파라미터
 # - eta [default=0.3, alias: learning_rate] : GBM의 학습률(learning rate)과 같은 파라미터
 #     - 0 ~ 1 사이의 값을 지정. 부스팅 스텝을 반복적으로 수행할 때 업데이트 되는 학습률 값
 #     - 파이썬 래퍼 기반의 xgboost를 이용할 경우 디폴트는 0.3
 #     - 사이킷번 래퍼 클래스 이용시 eta는 learning_rate 파라미터로 대체. 디폴트는 0.1
 #     - 보통 0.01 ~ 0.2 사이의 값을 선호
-#     
+#
 # - num_boost_rounds: GBM의 n_estimators와 같은 파라미터
-# 
-# 
+#
+#
 # - **min_child_weight** [default=1] : 트리에서 추가적으로 가지를 나눌지를 결정하기 위해 필요한 데이터들의  Weight 총합.
 #     - `min_child_weight가 클수록` 분할을 자제함 => **`과적합을 조절`**하기 위해 사용
-#     
-#     
+#
+#
 # - **gamma** [default=0, alias: min_split_loss] : 트리의 리프 노드를 추가적으로 나눌지를 결정할 최소 손실 감소 값
 #     - 해당 값보다 큰 손실(loss)이 감소된 경우에 리프 노드를 분리함.
 #     - **`값이 클수록 과적합 감소 효과`**가 있음
-#     
-# 
+#
+#
 # - **max_depth** [default=6] : 트리 기반 알고리즘의 max_depth와 같음
 #     - 0을 지정하면 깊이에 제한이 없음
 #     - `max_depth가 높으면` 특정 피처 조건에 특화되어 룰 조건이 만들어지므로 `과적합 가능성이 높아짐`
 #     - 보통 3~10 사이의 값 적용
-#     
-#     
+#
+#
 # - sub_sample [default=1] : GBM의 subsample과 동일
 #     - `트리가 커져서 과적합되는 것을 제어`하기 위해 데이터를 샘플링하는 비율을 지정
 #     - sub_sample=0.5로 지정하면 전체 데이터의 절반을 트리를 생성하는데 사용
 #     - 0 ~ 1사이의 값이 가능하나 일반적으로 0.5~1 사이의 값을 사용
-#     
-#     
+#
+#
 # - colsample_bytree [default=1] : GBM의 max_features와 유사
 #     - 트리 생성에 필요한 피처(컬럼)를 임의로 샘플링할 때 사용
 #     - 매우 많은 피처가 있는 경우 `과적합을 조정`하는데 적용
-#     
-#     
+#
+#
 # - lambda [default=1, alias: reg_lambda] : L2 Regularization 적용 값
 #     - 피처 개수가 많을 경우 적용을 검토하며 `값이 클수록 과적합 감소 효과`가 있음
-#     
-#     
+#
+#
 # - alpha [default=0, alias: reg_alpha] : L1 Regularization 적용 값
 #     - 피처 개수가 많을 경우 적용을 검토하며 `값이 클수록 과적합 감소 효과`가 있음
-# 
-# 
+#
+#
 # - scale_pos_weight [default=1] : 특정 값으로 치우친 비대칭한 클래스로 구성된 데이터 세트의 균형을 유지하기 위한 파라미터
-# 
-# 
-# 
-# 
+#
+#
+#
+#
 # **③ 학습 태스크 파라미터**
 # : 학습 수행 시 객체 함수, 평가를 위한 지표 등을 설정하는 파라미터
 # - objective : 최소값을 가져야할 손실함수를 정의
 #     - XGBoost는 다양한 손실함수를 사용하는데, 주로 이진분류인지 다중분류인지에 따라 달라짐
-#     
+#
 #         - binary:logistic : 이진분류일 때 사용
-# 
+#
 #     - multi:softmax : 다중 분류일 때 적용
 #         - 손실함수가 multi:softmax일 경우 레이블 클래스의 개수인 num_class 파라미터를 지정해야 함
-#            
+#
 #     - multi:softprob : multi:softmax와 유사하나 개별 레이블 클래스에 해당하는 예측 확률을 반환
-# 
-# 
+#
+#
 # - eval_metric : 검증에 사용되는 함수를 정의
 #     - 기본값은 회귀의 경우 mse, 분류일 경우 error
 #     - eval_metric 유형
@@ -210,33 +210,33 @@ print(xgboost.__version__)
 #         - merror : Multiclass classification error rate
 #         - mlogloss : Multiclass logloss
 #         - auc : Area under the Curve
-
+#
 # ### 과적합 문제가 심각할 경우 파이썬래퍼 XGBoost의 조정할 하이퍼 파라미터들
 # - eta값을 낮춤 (0.01 ~ 0.2) : num_round(또는 n_estimator)는 반대로 높여줘야 함
 # - max_depth 값을 낮춤
 # - min_child_weight 값을 높임
 # - gamma 값을 높임
 # - subsample과 colsample_bytree 조정
-
+#
 # ## 사이킷런 래퍼 XGBoost
 # - 사이킷런의 기본 Estimator를 그대로 상속해 만든 것
 # - 다른 estimator와 같이 **`fit(), predict()`**만으로 학습과 예측 가능
 # - GridSearchCV, Pipeline 등 사이킷런의 유틸리티 그대로 사용 가능
-# 
-# 
+#
+#
 # - 분류를 위한 XGBClassifier 클래스
 # - 회귀를 위한 XGBRegressor 클래스
-# 
-# 
+#
+#
 # - 파이썬 래퍼 XGBoost에서 사용하는 하이퍼파라미터와 호환성을 유지하기 위해 몇개 하이퍼파라미터를 변경
 #     - eta  → learning_rate
 #     - sub_sample → subsample
 #     - lambda → reg_lambda
 #     - alpha → reg_alpha
-#     
-#     
+#
+#
 # - xgboost의 n_estimators와 num_boost_round는 동일한 파라미터
-#     - 이를 동시에 사용할 경우 
+#     - 이를 동시에 사용할 경우
 #         - 파이썬 래퍼 XGBoost API는 n_estimator를 무시하고 num_boost_round를 적용
 #         - 사이킷런 래퍼 XGBoost는 n_estimator 파라미터를 적용
 
