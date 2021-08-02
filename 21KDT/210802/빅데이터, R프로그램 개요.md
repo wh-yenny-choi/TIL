@@ -227,7 +227,7 @@ CONNECTIVITY
 
 #### **수집**
 
-빅데이터를 대어나게 한 사회적 요인 
+빅데이터를 태어나게 한 사회적 요인 
 
 - IoT(Internet of Things)
 
@@ -567,7 +567,7 @@ Google등 수 많은 기업과 community site에서 library제공
 
 R Progarm source
 
-
+데이터 마이닝 : **데이터 마이닝**(**data mining**)은 대규모로 저장된 **데이터** 안에서 체계적이고 자동적으로 통계적 규칙이나 패턴을 분석하여 가치있는 정보를 추출하는 과정이다. 다른 말로는 KDD(데이터베이스 속의 지식 발견, knowledge-discovery in databases)라고도 일컫는다.
 
 
 
