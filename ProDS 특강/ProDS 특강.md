@@ -30,3 +30,7 @@
 
 
 https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html
+
+
+
+https://www.statsmodels.org/stable/index.html
