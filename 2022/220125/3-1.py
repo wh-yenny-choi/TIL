@@ -8,3 +8,42 @@ for coin in coins:
     n %= coin  # 거슬러 준 이후의 남은 거스름돈
 
 print(count)
+
+n = 1260
+count = 0  # 거스름 돈 개수
+
+coins = [500, 100, 50, 10]
+
+for coin in coins:
+    count += n // coin
+    n %= coin
+
+print(count)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
