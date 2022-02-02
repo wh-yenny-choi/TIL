@@ -15,3 +15,21 @@ def fact(n):
     return count
 
 print(fact(5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
