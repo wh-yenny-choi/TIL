@@ -609,11 +609,16 @@ A가 NULL이면 B를, 그렇지 않다면 A를 반환
 
 
 IF(조건문, TRUE, FALSE)
-
+SELECT ANIMAL_ID, NAME,
+IF((SEX_UPON_INTAKE like 'Neutered%') or (SEX_UPON_INTAKE like 'Spayed%'), 'O', 'X') as '중성화'
+from ANIMAL_INS 
+order by ANIMAL_ID
 
 2015라면 %y = 15, %Y = 2015
 
 
 datetime type은 뺄셈이 가능
 ```
+
+
 
