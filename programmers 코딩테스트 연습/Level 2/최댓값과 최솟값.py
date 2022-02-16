@@ -73,3 +73,8 @@ def solution(s):
 
     answer = str(min_s) + ' ' + str(max_s)
     return answer
+
+
+def solution(s):
+    s = list(map(int,s.split()))
+    return str(min(s)) + " " + str(max(s))
